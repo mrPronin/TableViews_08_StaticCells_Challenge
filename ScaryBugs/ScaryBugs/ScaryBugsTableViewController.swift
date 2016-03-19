@@ -13,6 +13,19 @@ class ScaryBugsTableViewController: UITableViewController {
     // MARK: - Vars
     var bugSections = [BugSection]()
     
+    // MARK: - UIViewController
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setupBugs()
+        navigationItem.rightBarButtonItem = editButtonItem()
+        tableView.estimatedRowHeight = 65.0
+        tableView.rowHeight = UITableViewAutomaticDimension
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        tableView.reloadData()
+    }
+    
     override func setEditing(editing: Bool, animated: Bool) {
         super.setEditing(editing, animated: animated)
         if editing {
@@ -34,6 +47,7 @@ class ScaryBugsTableViewController: UITableViewController {
         }
     }
     
+    // MARK: - UITableViewDataSource
     override func tableView(tableView: UITableView, editingStyleForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCellEditingStyle {
         let bugSection = bugSections[indexPath.section]
         if indexPath.row >= bugSection.bugs.count {
@@ -88,14 +102,6 @@ class ScaryBugsTableViewController: UITableViewController {
             return false
         }
         return true
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        setupBugs()
-        navigationItem.rightBarButtonItem = editButtonItem()
-        tableView.estimatedRowHeight = 60.0
-        tableView.rowHeight = UITableViewAutomaticDimension
     }
     
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
@@ -178,7 +184,20 @@ class ScaryBugsTableViewController: UITableViewController {
         
     }
     
+    // MARK: - Navigation
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "GoToEdit" {
+            if let editController = segue.destinationViewController as? EditTableViewController {
+                if let indexPath = tableView.indexPathForSelectedRow {
+                    let bugSection = bugSections[indexPath.section]
+                    let bug = bugSection.bugs[indexPath.row]
+                    editController.bug = bug
+                }
+            }
+        }
+    }
     
+    // MARK: - Private
     private func setupBugs() {
         bugSections.append(BugSection(howScary: .NotScary))
         bugSections.append(BugSection(howScary: .ALittleScary))

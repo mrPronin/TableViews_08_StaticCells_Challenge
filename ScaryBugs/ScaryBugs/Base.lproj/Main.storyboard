@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="dzS-Nj-t5f">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Scary Bugs-->
@@ -14,15 +13,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="BugCell" rowHeight="60" id="2WN-9g-cwx" customClass="ScaryBugTableViewCell" customModule="ScaryBugs" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="92" width="600" height="60"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="BugCell" rowHeight="65" id="2WN-9g-cwx" customClass="ScaryBugTableViewCell" customModule="ScaryBugs" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="92" width="600" height="65"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2WN-9g-cwx" id="UFX-eb-Cfy">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="59.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="64.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="uEf-Ca-cjr">
-                                            <rect key="frame" x="0.0" y="0.0" width="580" height="60"/>
+                                        <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="uEf-Ca-cjr">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="60"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bee.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="aYw-DN-615">
                                                     <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
@@ -32,13 +31,13 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bee" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YgV-5i-hi9">
-                                                    <rect key="frame" x="67" y="11" width="483" height="38"/>
+                                                    <rect key="frame" x="68" y="12" width="501" height="38"/>
                                                     <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="24"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shockedface2_full.png" translatesAutoresizingMaskIntoConstraints="NO" id="27i-jS-dga">
-                                                    <rect key="frame" x="557" y="19" width="23" height="23"/>
+                                                    <rect key="frame" x="577" y="19" width="23" height="23"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="23" id="YRo-mj-x4c"/>
                                                         <constraint firstAttribute="height" constant="23" id="Zpa-Dx-JPs"/>
@@ -48,20 +47,21 @@
                                         </stackView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="uEf-Ca-cjr" firstAttribute="top" secondItem="UFX-eb-Cfy" secondAttribute="topMargin" constant="-8" id="CMC-6R-3Pa"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="uEf-Ca-cjr" secondAttribute="bottom" constant="-9" id="vAG-mq-tHs"/>
-                                        <constraint firstAttribute="trailing" secondItem="uEf-Ca-cjr" secondAttribute="trailing" constant="20" symbolic="YES" id="yzW-Gj-8Ag"/>
-                                        <constraint firstItem="uEf-Ca-cjr" firstAttribute="leading" secondItem="UFX-eb-Cfy" secondAttribute="leading" id="zr8-wB-nmT"/>
+                                        <constraint firstItem="uEf-Ca-cjr" firstAttribute="top" secondItem="UFX-eb-Cfy" secondAttribute="top" id="9Xl-g8-8aa"/>
+                                        <constraint firstAttribute="bottom" secondItem="uEf-Ca-cjr" secondAttribute="bottom" constant="4.5" id="Ea6-lG-Yfr"/>
+                                        <constraint firstAttribute="trailing" secondItem="uEf-Ca-cjr" secondAttribute="trailing" id="bqu-X5-nae"/>
+                                        <constraint firstItem="uEf-Ca-cjr" firstAttribute="leading" secondItem="UFX-eb-Cfy" secondAttribute="leading" id="lQX-Na-DBN"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="bugImageView" destination="aYw-DN-615" id="fEI-75-TYb"/>
                                     <outlet property="bugNameLabel" destination="YgV-5i-hi9" id="XfB-p9-CUm"/>
                                     <outlet property="howScaryImageView" destination="27i-jS-dga" id="bEM-Cy-lcQ"/>
+                                    <segue destination="5iL-UO-aAp" kind="show" identifier="GoToEdit" id="Q01-D3-occ"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="NewRowCell" textLabel="m68-uI-uDj" detailTextLabel="0gZ-zg-bd2" rowHeight="60" style="IBUITableViewCellStyleSubtitle" id="337-09-BLV">
-                                <rect key="frame" x="0.0" y="152" width="600" height="60"/>
+                                <rect key="frame" x="0.0" y="157" width="600" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="337-09-BLV" id="plk-a0-ufN">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="59.5"/>
@@ -108,13 +108,13 @@
                             <tableViewSection headerTitle="THE BUG" id="z3V-qb-FqI">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="200" id="XJ8-cj-ntF">
-                                        <rect key="frame" x="0.0" y="49.5" width="600" height="200"/>
+                                        <rect key="frame" x="0.0" y="113.5" width="600" height="200"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="XJ8-cj-ntF" id="KHf-jb-Xl6">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="199.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7bP-GP-0Dr">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7bP-GP-0Dr">
                                                     <rect key="frame" x="0.0" y="0.0" width="600" height="199.5"/>
                                                 </imageView>
                                             </subviews>
@@ -131,7 +131,7 @@
                             <tableViewSection headerTitle="THE REST" id="Nws-Q0-EXG">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="RgL-CL-U9G">
-                                        <rect key="frame" x="0.0" y="299.5" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="363.5" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="RgL-CL-U9G" id="z1D-ke-bOs">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
@@ -169,7 +169,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="ofg-Ic-nM4">
-                                        <rect key="frame" x="0.0" y="343.5" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="407.5" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ofg-Ic-nM4" id="mMU-t8-JIQ">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
